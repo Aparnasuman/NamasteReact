@@ -1,45 +1,34 @@
-const heading = React.createElement(
-  "div",
-  { id: "parent", xyz: "abc" },
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-  React.createElement(
-    "div",
-    { id: "child" },
-
-    [
-      React.createElement(
-        "h1",
-        { key: 1 },
-        "I am a big fan"
-      ),
-
-      React.createElement(
-        "h1",
-        { key: 2 },
-        "I am a big fan1"
-      ),
-
-      React.createElement(
-        "h1",
-        { key: 3 },
-        "I am a big fan2"
-      )
-    ]
-  )
+// React.createElement => Object => HTML Element
+//React Element
+const JSXheading = (
+  <h1 className="head" tabIndex="5">
+    Namaste React using JSX
+  </h1>
 );
 
-React.createElement("div",{id:"child1"},[
-       React.createElement(
-        "h1",
-        { key: 1 },
-        "I am a big fan"
-      ),
-])
+//React functional component
+//Component Composition
+const HeadingComponent =()=>{
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root")
-);
+    return(<div> <JSXheading/><h1 className="heading">Namaste React Functional Component</h1></div>)
 
-console.log(heading);
+}
+//Normal functional component
+const JSXheadingMp = function(){
+    
+    
+    return(
+      <h1 className="head" tabIndex="5">
+    Namaste React using JSX
+  </h1>
+);}
 
-root.render(heading);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent/>);
+//root.render(JSXheading);
+
+
